@@ -33,3 +33,26 @@ def fun_intentos():
         tamano_palabra(palabra_ingresada,numero)
     else:
         print("Perdiste :(\nMejor suerte la proxima")
+
+
+# controla el tamaño de la palabra
+def tamano_palabra(palabra,numero):
+    global palabra_secreta
+    global intentos
+    if len(palabra) == numero:
+        print(f"Palabra tiene {numero} letras")
+        verificador_palabra(palabra,palabra_secreta)
+    else:
+        print(f"{palabra} no tiene {numero} letras")
+        intentos+=1
+        fun_intentos()
+
+# transforma la palabra a una lista
+def transformar(palabra):
+    palabras_ingresadas = []
+    for i in range(3):
+        # palabra = input("ingresa una palabra")
+        palabra_convertida = list(palabra)
+        palabras_ingresadas.append(palabra_convertida)
+        return palabras_ingresadas
+
