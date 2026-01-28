@@ -78,3 +78,13 @@ def verificador_palabra(palabra_ingresada, palabra_secreta):
     else:
         ganador(palabra_ingresada)
 
+# imprimir listas
+
+def imprimir_matriz(lista):
+    x=0
+    for i in lista:
+        print(lista[x])
+        x+=1
+    
+def ganador(palabra_ingresada):
+    print(f"Felicidades GANASTE!\nLa palabra era {palabra_ingresada}!!")
