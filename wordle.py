@@ -88,3 +88,7 @@ def imprimir_matriz(lista):
     
 def ganador(palabra_ingresada):
     print(f"Felicidades GANASTE!\nLa palabra era {palabra_ingresada}!!")
+
+
+# se inicia el programa
+fun_intentos()
