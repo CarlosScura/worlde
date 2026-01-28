@@ -14,7 +14,7 @@ palabra_ingresada = ''
 
 numero = 5
 
-ganaste = False
+# ganaste = False
 
 '''
     FUNCIONES
@@ -28,7 +28,7 @@ def fun_intentos():
     if intentos > 0:
         print(f"tienes {intentos} intentos")
         intentos -= 1
-        palabra_ingresada = input("Ingrese una palabra")
+        palabra_ingresada = input("Ingrese una palabra: ")
         print(f"la palabra ingresada es: {palabra_ingresada}")
         tamano_palabra(palabra_ingresada,numero)
     else:
@@ -66,17 +66,15 @@ def verificador_palabra(palabra_ingresada, palabra_secreta):
         la_letra_existe_en_la_palabra = palabra_ingresada[i] in palabra_secreta # True or False
         if las_palabras_son_iguales:
             letras_verificadas.append(f"[{palabra_ingresada[i]}]")
-            ganaste = True # si esto pasa ultimo se gana igual
         elif la_letra_existe_en_la_palabra:
             letras_verificadas.append(f"({palabra_ingresada[i]})")
-            ganaste = False
         else:
             letras_verificadas.append(palabra_ingresada[i])
-            ganaste = False
-    if not ganaste:
-        imprimir_matriz(letras_verificadas)
-    else:
+    if palabra_secreta == palabra_ingresada:
         ganador(palabra_ingresada)
+    else:
+        imprimir_matriz(letras_verificadas)
+        
 
 # imprimir listas
 
@@ -85,9 +83,14 @@ def imprimir_matriz(lista):
     for i in lista:
         print(lista[x])
         x+=1
+    fun_intentos()
+
+# Agregamos la funcion para imprimir el mensaje de victoria
     
 def ganador(palabra_ingresada):
     print(f"Felicidades GANASTE!\nLa palabra era {palabra_ingresada}!!")
+
+#
 
 '''
     PROGRAMA
